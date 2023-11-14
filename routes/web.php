@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('dashboard', function() {
-        return 'admin dashboard';
-    });
-});
+use App\Http\Controllers\HomeController;
+
+Route::get('home',[HomeController::class,'index']) -> name('home.index');
+
