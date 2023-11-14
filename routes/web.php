@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('hello/{name?}', function($name = 'Everybody') {
-    return 'Hello, '.$name;
-}) -> name('helllo.index');
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('dashboard', function() {
+        return 'admin dashboard';
+    });
+});
